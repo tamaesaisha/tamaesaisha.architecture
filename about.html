@@ -1,0 +1,42 @@
+---
+layout: default
+title: About
+permalink: /about/
+---
+{%- assign a = site.data.about -%}{%- assign s = site.data.settings -%}
+<section class="about-top">
+  <img class="portrait" src="{{ a.photo | relative_url }}" alt="Portrait of {{ s.name }}">
+  <div>
+    <h1 class="marker">About me…</h1>
+    <p class="lede">{{ a.intro }}</p>
+    <p>{{ a.bio }}</p>
+  </div>
+</section>
+<div class="cv">
+  <section>
+    <h2 class="sketch-h">Experience</h2>
+    <dl>{% for e in a.experience %}<dt>{{ e.years }}</dt><dd><strong>{{ e.role }}</strong>, {{ e.place }}<span>{{ e.details }}</span></dd>{% endfor %}</dl>
+  </section>
+  <section>
+    <h2 class="sketch-h">Education</h2>
+    <dl>{% for e in a.education %}<dt>{{ e.years }}</dt><dd><strong>{{ e.place }}</strong><span>{{ e.details }}</span></dd>{% endfor %}</dl>
+    <h2 class="sketch-h">Recognition</h2>
+    <dl>{% for e in a.recognition %}<dt>{{ e.year }}</dt><dd>{{ e.title }}</dd>{% endfor %}</dl>
+  </section>
+  <section>
+    <h2 class="sketch-h">Skills</h2>
+    <dl>{% for e in a.skills %}<dt>{{ e.group }}</dt><dd>{{ e.items }}</dd>{% endfor %}</dl>
+    <h2 class="sketch-h">Volunteering</h2>
+    <dl>{% for e in a.volunteering %}<dt>{{ e.years }}</dt><dd><strong>{{ e.place }}</strong><span>{{ e.details }}</span></dd>{% endfor %}</dl>
+  </section>
+</div>
+<section class="contact" id="contact">
+  <h2 class="marker">Get in touch</h2>
+  <ul>
+    <li><a href="mailto:{{ s.email }}">{{ s.email }}</a></li>
+    {% if s.phone %}<li><a href="tel:{{ s.phone | remove: ' ' }}">{{ s.phone }}</a></li>{% endif %}
+    {% if s.instagram %}<li><a href="https://instagram.com/{{ s.instagram }}">Instagram @{{ s.instagram }}</a></li>{% endif %}
+    <li>{{ s.location }}</li>
+  </ul>
+  {% if s.portfolio_pdf %}<a class="btn" href="{{ s.portfolio_pdf | relative_url }}" download>Download portfolio (PDF)</a>{% endif %}
+</section>

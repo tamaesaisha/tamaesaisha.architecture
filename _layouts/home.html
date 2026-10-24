@@ -1,0 +1,52 @@
+---
+layout: default
+---
+{%- assign s = site.data.settings -%}
+{%- assign projects = site.projects | sort: 'order' -%}
+<section class="cover" aria-label="Introduction">
+  <span class="rule-v" aria-hidden="true"></span>
+  <span class="rule-h" aria-hidden="true"></span>
+  <p class="cover-meta">{{ s.tagline }}</p>
+  <h1 class="cover-title">
+    <span class="brush">Architecture</span>
+    <span class="sketch">Portfolio</span>
+  </h1>
+  <p class="cover-name">{{ s.name }}</p>
+</section>
+
+<section class="work" id="work" aria-labelledby="work-h">
+  <h2 id="work-h" class="marker">Selected work</h2>
+  {%- assign cats = projects | map: 'category' | uniq -%}
+  {%- if cats.size > 1 %}
+  <div class="filters" role="group" aria-label="Filter projects">
+    <button type="button" aria-pressed="true" data-filter="all">All</button>
+    {%- for c in cats %}<button type="button" aria-pressed="false" data-filter="{{ c | slugify }}">{{ c }}</button>{% endfor %}
+  </div>
+  {%- endif %}
+  <ol class="index">
+    {%- for p in projects %}
+    <li class="entry" data-cat="{{ p.category | slugify }}">
+      <a href="{{ p.url | relative_url }}">
+        <figure class="entry-img"><img src="{{ p.cover | relative_url }}" alt="{{ p.title }}, {{ p.location }}" loading="{% if forloop.index > 2 %}lazy{% else %}eager{% endif %}"></figure>
+        <div class="entry-text">
+          <span class="num" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+          {% if p.kicker %}<p class="kicker">{{ p.kicker }}</p>{% endif %}
+          <h3 class="marker">{{ p.title }}</h3>
+          <p class="loc">{{ p.location }}</p>
+          <p class="sum">{{ p.summary }}</p>
+          <p class="meta">{{ p.category }}{% if p.year %}, {{ p.year }}{% endif %}</p>
+        </div>
+      </a>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+
+<section class="hello">
+  <img src="{{ site.data.about.photo | relative_url }}" alt="Portrait of {{ s.name }}" loading="lazy">
+  <div>
+    <h2 class="marker">About me…</h2>
+    <p>{{ site.data.about.intro }}</p>
+    <a class="btn" href="{{ '/about/' | relative_url }}">Read more about me</a>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{%- assign projects = site.projects | sort: 'order' -%}
+{%- for p in projects -%}{%- if p.url == page.url -%}{%- assign i = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- assign last = projects.size | minus: 1 -%}
+<article class="project">
+  <header class="p-head">
+    <figure class="p-cover"><img src="{{ page.cover | relative_url }}" alt="{{ page.title }}, {{ page.location }}"></figure>
+    <div class="p-title">
+      {% if page.kicker %}<p class="kicker">{{ page.kicker }}</p>{% endif %}
+      <h1 class="marker">{{ page.title }}</h1>
+      <p class="loc">{{ page.location }}</p>
+      <p class="meta">{{ page.category }}{% if page.year %}, {{ page.year }}{% endif %}</p>
+      {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+    </div>
+  </header>
+  {% if content != '' %}<div class="p-body prose">{{ content }}</div>{% endif %}
+  {% if page.gallery %}
+  <section class="sheets" aria-label="Drawings and images">
+    {%- for g in page.gallery %}
+    <figure class="sheet">
+      <button type="button" class="zoom" data-full="{{ g.image | relative_url }}" data-caption="{{ g.caption | escape }}" aria-label="Enlarge{% if g.caption %}: {{ g.caption | escape }}{% endif %}">
+        <img src="{{ g.image | relative_url }}" alt="{{ g.caption | default: page.title | escape }}" loading="lazy">
+      </button>
+      {% if g.caption %}<figcaption>{{ g.caption }}</figcaption>{% endif %}
+    </figure>
+    {%- endfor %}
+  </section>
+  {% endif %}
+  <nav class="p-nav" aria-label="More projects">
+    {%- assign pi = i | minus: 1 -%}{%- assign ni = i | plus: 1 -%}
+    {%- if i > 0 %}{% assign prev = projects[pi] %}<a class="prev" href="{{ prev.url | relative_url }}"><span>Previous</span><strong class="marker">{{ prev.title }}</strong></a>{% else %}<span></span>{% endif %}
+    {%- if i < last %}{% assign nxt = projects[ni] %}<a class="next" href="{{ nxt.url | relative_url }}"><span>Next</span><strong class="marker">{{ nxt.title }}</strong></a>{% endif %}
+  </nav>
+</article>
+<dialog class="viewer" aria-label="Enlarged image">
+  <form method="dialog"><button class="close" aria-label="Close">Close</button></form>
+  <img alt="">
+  <p class="viewer-cap"></p>
+</dialog>

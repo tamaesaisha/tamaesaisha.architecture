@@ -1,0 +1,75 @@
+photo: /assets/uploads/profile.webp
+intro: >-
+  I’m a third-year architecture student at the University of the Witwatersrand,
+  interested in designing spaces that feel considered, responsive, and genuinely
+  connected to the people who use them. I’m drawn to the idea that good
+  architecture sits somewhere between function and feeling. It works well, but it
+  also creates atmosphere through light, air, material, and movement.
+bio: >-
+  My process moves between digital tools and hand drawing, using each to test and
+  understand ideas rather than just represent them. I’m especially interested in
+  sustainable and passive design, and how simple, thoughtful strategies can shape
+  comfortable environments that respond to climate and context. Model making is an
+  important method of design for me. I’m extremely passionate about it and will
+  continue to use it as a tool for design. Alongside architecture, I’ve worked in
+  art and graphic design, which has strengthened how I communicate ideas visually
+  and approach composition with more intention.
+
+experience:
+  - years: "2026"
+    role: Student internship
+    place: SAOTA
+    details: >-
+      Designed a bespoke family residence from concept to presentation through
+      one-on-one mentorship with a SAOTA architect. Produced coordinated Revit BIM
+      models, documentation and Twinmotion visualisations, joined site visits to
+      completed SAOTA residences, and presented proposals for iterative critique.
+  - years: "2024"
+    role: Architecture intern
+    place: Sagnelli Architects, Durban
+    details: >-
+      Assisted in the early conceptual design of a residential project. Produced
+      Revit and AutoCAD drawings and 3D models to communicate design intent, and
+      took part in internal design reviews.
+  - years: 2023 – present
+    role: Freelance graphic designer and artist
+    place: Self-employed
+    details: >-
+      Brand identities and logos for local businesses, commissioned artwork for
+      private clients, posters, digital graphics and illustrations.
+
+education:
+  - years: 2024 – 2026
+    place: University of the Witwatersrand
+    details: Bachelor of Architectural Studies (final year)
+  - years: 2019 – 2023
+    place: Newhaven Secondary School, Durban
+    details: National Senior Certificate
+
+recognition:
+  - year: "2025"
+    title: Gauteng Institute for Architecture 1st Year Award
+  - year: 2024 – 2025
+    title: Distinction, Building Ecology I
+  - year: 2024 – 2025
+    title: Distinction, Histories & Theories of Architecture I/II
+  - year: 2024 – 2025
+    title: Distinction, Introduction to Structures II
+  - year: 2024 – 2025
+    title: Distinction, Design Representation (Sound Design) II
+
+skills:
+  - group: Design
+    items: Concept development and spatial thinking, contextual and site-responsive design, hand drawing, passive and climate-responsive design, architectural representation, model making with real materials
+  - group: Software
+    items: Revit, AutoCAD, SketchUp, Twinmotion, Dynamo, Photoshop, Illustrator, InDesign, Procreate
+  - group: Also
+    items: Graphic design and branding, commissioned artwork, visual storytelling, photography
+
+volunteering:
+  - years: 2026 – present
+    place: Hands for Hunger Johannesburg
+    details: Food distribution and community outreach for vulnerable communities.
+  - years: 2024 – present
+    place: Sivananda Divine Life Society
+    details: Community-based service and well-being events.

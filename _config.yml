@@ -1,0 +1,29 @@
+# Site build settings. Text and contact details live in _data/settings.yml
+# and _data/about.yml, which can be edited in Pages CMS.
+
+title: Tamae Saisha Reddy — Architecture
+
+# If the site lives at https://tamaesaisha.github.io/tamaesaisha.architecture/
+# keep this as is. If the repo is renamed to tamaesaisha.github.io, or a custom
+# domain is added, change it to an empty string: baseurl: ""
+baseurl: "/tamaesaisha.architecture"
+
+markdown: kramdown
+
+collections:
+  projects:
+    output: true
+    permalink: /work/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
+exclude:
+  - README.md
+  - SETUP.md
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,43 @@
+{%- assign s = site.data.settings -%}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.layout != 'home' %}{{ page.title }} — {% endif %}{{ s.name }}, architecture</title>
+  <meta name="description" content="{{ page.summary | default: s.tagline | strip_html | escape }}">
+  <meta property="og:title" content="{{ page.title | default: s.name }}">
+  <meta property="og:description" content="{{ page.summary | default: s.tagline | strip_html | escape }}">
+  {%- if page.cover %}<meta property="og:image" content="{{ page.cover | absolute_url }}">{% endif %}
+  <link rel="icon" href="{{ '/assets/img/figures.png' | relative_url }}">
+  <link rel="preload" href="{{ '/assets/fonts/permanent-marker-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body class="{{ page.layout }}">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ s.name }}, home">
+      <img src="{{ '/assets/img/figures.png' | relative_url }}" alt="" width="86" height="30">
+      <span>{{ s.name }}</span>
+    </a>
+    <nav aria-label="Main">
+      <a href="{{ '/#work' | relative_url }}">Work</a>
+      <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
+      <a href="{{ '/about/#contact' | relative_url }}">Contact</a>
+    </nav>
+  </header>
+  <main id="main">
+    {{ content }}
+  </main>
+  <footer class="foot">
+    <img src="{{ '/assets/img/figures.png' | relative_url }}" alt="" width="172" height="61">
+    <div class="foot-links">
+      <a href="mailto:{{ s.email }}">{{ s.email }}</a>
+      {% if s.instagram %}<a href="https://instagram.com/{{ s.instagram }}">Instagram @{{ s.instagram }}</a>{% endif %}
+      {% if s.portfolio_pdf %}<a href="{{ s.portfolio_pdf | relative_url }}" download>Download portfolio (PDF)</a>{% endif %}
+    </div>
+    <p class="foot-note">© {{ site.time | date: '%Y' }} {{ s.name }}. {{ s.location }}.</p>
+  </footer>
+  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+</body>
+</html>

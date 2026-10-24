@@ -1,0 +1,145 @@
+# Pages CMS configuration — https://pagescms.org/docs/
+# This file controls what appears in the editor at app.pagescms.org.
+
+media:
+  input: assets/uploads
+  output: /assets/uploads
+  rename: safe
+  categories: [image, document]
+
+content:
+  - name: projects
+    label: Projects
+    type: collection
+    path: _projects
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields: [title, location, category, order]
+      sort: [order, title]
+    fields:
+      - name: title
+        label: Project title
+        type: string
+        required: true
+        description: Written in the marker lettering, e.g. "Timber Shelter".
+      - name: kicker
+        label: Small heading above the title
+        type: string
+        description: Optional, e.g. "Leave no trace" or "SAOTA student internship".
+      - name: location
+        label: Location
+        type: string
+        description: e.g. "Tsitsikamma, Eastern Cape".
+      - name: year
+        label: Year
+        type: string
+        description: e.g. "2026" or "Year 3".
+      - name: category
+        label: Category
+        type: select
+        required: true
+        description: Used for the filter buttons on the home page.
+        options:
+          values: [Architecture, Competition, Internship, Model making, Art & design, Writing & process]
+      - name: order
+        label: Position on the home page
+        type: number
+        required: true
+        description: 1 shows first. Give a new project the next number up.
+      - name: cover
+        label: Cover image
+        type: image
+        required: true
+        description: Shown on the home page and at the top of the project. Landscape works best.
+      - name: summary
+        label: Short summary
+        type: text
+        description: One or two sentences for the home page.
+      - name: gallery
+        label: Sheets and images
+        type: object
+        list: true
+        description: Portfolio sheets, drawings, model photos. Shown in this order, full width.
+        fields:
+          - name: image
+            label: Image
+            type: image
+          - name: caption
+            label: Caption
+            type: string
+      - name: published
+        label: Show on the website
+        type: boolean
+        default: true
+        description: Switch off to keep a project as a draft.
+      - name: body
+        label: Project description
+        type: rich-text
+
+  - name: about
+    label: About page
+    type: file
+    path: _data/about.yml
+    fields:
+      - name: photo
+        label: Portrait
+        type: image
+      - name: intro
+        label: Introduction
+        type: text
+      - name: bio
+        label: More about me
+        type: text
+      - name: experience
+        label: Experience
+        type: object
+        list: true
+        fields:
+          - { name: years, label: Years, type: string }
+          - { name: role, label: Role, type: string }
+          - { name: place, label: Where, type: string }
+          - { name: details, label: Details, type: text }
+      - name: education
+        label: Education
+        type: object
+        list: true
+        fields:
+          - { name: years, label: Years, type: string }
+          - { name: place, label: School, type: string }
+          - { name: details, label: Qualification, type: string }
+      - name: recognition
+        label: Awards and distinctions
+        type: object
+        list: true
+        fields:
+          - { name: year, label: Year, type: string }
+          - { name: title, label: Award, type: string }
+      - name: skills
+        label: Skills
+        type: object
+        list: true
+        fields:
+          - { name: group, label: Group, type: string }
+          - { name: items, label: Skills, type: text }
+      - name: volunteering
+        label: Volunteering
+        type: object
+        list: true
+        fields:
+          - { name: years, label: Years, type: string }
+          - { name: place, label: Organisation, type: string }
+          - { name: details, label: Details, type: text }
+
+  - name: settings
+    label: Contact and site details
+    type: file
+    path: _data/settings.yml
+    fields:
+      - { name: name, label: Name, type: string }
+      - { name: tagline, label: Line on the cover, type: string }
+      - { name: email, label: Email, type: string }
+      - { name: phone, label: Phone, type: string }
+      - { name: instagram, label: Instagram handle (without @), type: string }
+      - { name: location, label: Location, type: string }
+      - { name: portfolio_pdf, label: Portfolio PDF, type: file, description: Upload a compressed PDF (under 20 MB). }
