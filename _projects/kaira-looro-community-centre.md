@@ -6,7 +6,8 @@ year: "2026"
 category: Competition
 order: 4
 cover: /assets/uploads/kaira-looro-cover.webp
-summary: Kër gu ñu bokk — “home, where we belong together” — a community centre organised around a central rain-harvesting water court.
+summary: Kër gu ñu bokk - “home, where we belong together” - a community centre
+  organised around a central rain-harvesting water court.
 gallery:
   - image: /assets/uploads/kaira-looro-01.webp
     caption: Construction concept drawings, materiality and social and economic impact
@@ -24,7 +25,10 @@ gallery:
     caption: 1:10 perimeter section model
   - image: /assets/uploads/kaira-looro-08.webp
     caption: 1:10 perimeter section
+published: true
 ---
-<p>Kër gu ñu bokk is a proposed community centre in Diakene Ouolof, Senegal, organised around a central rain-harvesting water court. The project explores how architecture can support everyday life and small-scale local economy through one connected spatial system.</p>
-<p>Programmes including washing, pottery and soap making, food growing, cooking, trade, learning, and community gathering are arranged around a shared core, allowing water to function as both environmental infrastructure and social anchor. The design focuses on climate-responsive form, simple material logic, and the relationship between productive activity, communal space, and collective self-sufficiency.</p>
-<p>Site mapping examined the relationship between the village fabric, routes, landscape, and the placement of the centre at the settlement edge. A materiality study tested how local resources and low-tech construction methods could inform the architecture, linking the environmental strategy to its structural and economic logic.</p>
+Kër gu ñu bokk is a proposed community centre in Diakene Ouolof, Senegal, organised around a central rain-harvesting water court. The project explores how architecture can support everyday life and small-scale local economy through one connected spatial system.
+
+Programmes including washing, pottery and soap making, food growing, cooking, trade, learning, and community gathering are arranged around a shared core, allowing water to function as both environmental infrastructure and social anchor. The design focuses on climate-responsive form, simple material logic, and the relationship between productive activity, communal space, and collective self-sufficiency.
+
+Site mapping examined the relationship between the village fabric, routes, landscape, and the placement of the centre at the settlement edge. A materiality study tested how local resources and low-tech construction methods could inform the architecture, linking the environmental strategy to its structural and economic logic.
